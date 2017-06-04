@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Angular application</title>
+<link rel="stylesheet" type="text/css" href="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css">
+<link rel="stylesheet" type="text/css" href="node_modules/bootstrap-css-only/css/bootstrap.css">		
+</head>
+
+<body ng-app="myApp1">
+
+	<div class="container" ng-controller="myAppController as vm">
+		<div class="header">
+			<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			      <a class="navbar-brand" href="#">Angular app</a>
+			    </div>
+			    <ul class="nav navbar-nav">
+			      <li><a ui-sref="profile">Profile</a></li>
+			      <li><a ui-sref="friendlist">Friend List</a></li>
+			      <li><a ui-sref="editProfile">Edit Profile</a></li>
+
+			    </ul>
+
+			    <ul class="nav navbar-nav navbar-right">
+	        		<li><a href="">{{vm.UserService.user.name}}</a></li>
+	        	</ul>
+			  </div>
+			</nav>
+
+			
+		</div>
+
+		<div class="content" style="min-height:400px;">
+			<h1>Welcome angular world </h1>
+			<ui-view></ui-view>
+
+		</div>
+		
+		<div class="footer">
+			<p>Copy right all right reserved 2017</p>
+		</div>
+	</div>
+<!--vendor script-->
+<script type="text/javascript" src="node_modules/angular/angular.js"></script>
+<script type="text/javascript" src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+
+<script type="text/javascript" src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+<script type="text/javascript" src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+<script type="text/javascript" src="node_modules/angular-filter/dist/angular-filter.js"></script>
+
+<!--app script-->
+<script type="text/javascript" src="app.module.js"></script>
+<script type="text/javascript" src="app.route.js"></script>
+<script type="text/javascript" src="app.controller.js"></script>
+<script type="text/javascript" src="app/core/services/user.service.js"></script>
+
+
+
+<script type="text/javascript" src="app/modules/profile/profile.Controller.js"></script>
+<script type="text/javascript" src="app/modules/friendlist/friendlist.Controller.js"></script>
+<script type="text/javascript" src="app/modules/editprofile/editprofile.Controller.js"></script>
+
+</body>
+</html>
